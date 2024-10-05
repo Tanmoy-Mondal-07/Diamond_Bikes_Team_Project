@@ -1,0 +1,121 @@
+<!-- python -m http.server 8000 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link
+      rel="icon"
+      type="image/jpg"
+      sizes="32x32"
+      href="./design/LOGO.jpg"
+    />
+
+  <title>product page</title>
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <script src="main.js" defer></script>
+  <script src="slider.js" defer></script>
+  <script src="cart.js" defer></script>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <nav class="navbar">
+        <section class="nav-first">
+          <div class="logo">
+            <h1>Dimond Bikes</h1>
+          </div>
+        </section>
+          <section class="nav-first">
+          <div class="backdrop"></div>
+          <div class="nav-links">
+            <h1 class="close-icon">
+              &#10006
+            </h1>
+            <a href="#">Collections</a>
+            <a href="#">New</a>
+            <a href="#">Wishlist</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+          </div>
+          <div class="cart">
+            <span class="cart-icon" alt="cart icon" >&#10084;</span>
+            <div class="cart-count">
+              <span class="qty">0</span>
+            </div>
+          </div>
+          <h1 class="menu-icon" height="35" >&#9776</h1>
+      </section>
+      </nav>
+    </header>
+
+    <section class="main">
+      <div class="default gallery">
+        <div class="main-img">
+          <img class="active" src="https://static.india.com/wp-content/uploads/2022/08/Ola-mm.jpg?impolicy=Medium_Resize&w=1200&h=800" alt="product-img" />
+          <img src="design/Default_A_treditional_danqing_style_minimalist_logo_design_wit_0.jpg" alt="product-img" />
+          <img src="design/Leonardo_Phoenix_Complex_art_microscopic_detaling_A_treditiona_2.jpg" alt="product-img" />
+          <img src="design/Leonardo_Phoenix_Complex_art_microscopic_detaling_A_treditiona_3.jpg" alt="product-img" />
+        </div>
+        <div class="thumb-list">
+          <div class="active">
+            <img src="https://static.india.com/wp-content/uploads/2022/08/Ola-mm.jpg?impolicy=Medium_Resize&w=1200&h=800" alt="product-img" />
+          </div>
+          <div>
+            <img src="design/Default_A_treditional_danqing_style_minimalist_logo_design_wit_0.jpg" alt="product-img" />
+          </div>
+          <div>
+            <img src="design/Leonardo_Phoenix_Complex_art_microscopic_detaling_A_treditiona_2.jpg" alt="product-img" />
+          </div>
+          <div>
+            <img src="design/Leonardo_Phoenix_Complex_art_microscopic_detaling_A_treditiona_3.jpg" alt="product-img" />
+          </div>
+          <div>
+            <img src="https://i.pinimg.com/736x/81/1f/71/811f71f27c270920248592825ac93b15.jpg" alt="product-img" />
+          </div>
+          <div>
+            <img src="https://i.pinimg.com/736x/81/1f/71/811f71f27c270920248592825ac93b15.jpg" alt="product-img" />
+          </div>
+          <div>
+            <img src="https://i.pinimg.com/736x/81/1f/71/811f71f27c270920248592825ac93b15.jpg" alt="product-img" />
+          </div>
+          
+        </div>
+      </div>
+
+      
+
+      <div class="content">
+        <h3>Ola Electric</h3>
+        <h2 class="product-name">Move over Petrol. Switch to the Ola S1</h2>
+        <p class="product-desc">
+          The estimated total monthly cost includes EMI, maintenance, and running expenses calculated for 
+          the price of S1 X(2kWh). Based on electricity and fuel prices in Bangalore as of August 2023, 
+          with a daily distance of 30 kms
+        </p>
+        <div class="price-info">
+          <div class="price">
+            <span class="current-price">Rs.50,000</span>
+            <span class="discount">50%off</span>
+          </div>
+          <div class="prev-price">Rs.100,000</div>
+        </div>
+        <div class="buy-the-car-container">
+          <button class="buy-the-car">
+            <span>
+              <h1>Place Order</h1>
+            </span>
+          </button>
+          <button class="love-the-car">
+            <span id="heart" class="heart">&#10084;</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+
+</html>

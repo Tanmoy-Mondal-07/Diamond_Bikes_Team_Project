@@ -1,0 +1,503 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.main, .gallery, .nav-links {
+  overflow: hidden;
+}
+
+
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --orange: hsl(208, 100%, 13%);
+  --pale-orange: hsl(204, 93%, 39%);
+  --very-dark-blue: hsl(220, 13%, 13%);
+  --dark-grayish-blue: hsl(219, 9%, 45%);
+  --grayish-blue: hsl(220, 14%, 75%);
+  --light-grayish-blue: hsl(223, 64%, 98%);
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --black-with-opacity: hsla(0, 0%, 0%, 0.75);
+}
+
+html {
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: var(--dark-grayish-blue);
+}
+
+body {
+  min-height: 100vh;
+  min-width: 100vw;
+  position: relative;
+}
+
+.container {
+  max-width: 1120px;
+  min-height: 100vh;
+  padding: 0 10px;
+  margin: auto;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0px;
+  border-bottom: 1px solid var(--grayish-blue);
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.nav-first {
+  display: flex;
+  align-items: center;
+  gap: 0px;
+  padding-bottom: 0px;
+}
+
+.nav-first .menu-icon {
+  display: none;
+  font-size: 25px;
+}
+
+.nav-first .backdrop {
+  display: none;
+}
+
+.nav-links .close-icon {
+  
+  display: none;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links a {
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: var(--black);
+}
+
+.nav-links a:hover::after {
+  content: "";
+  position: absolute;
+  background-color: var(--orange);
+  width: 100%;
+  height: 3px;
+  left: 0;
+  bottom: -47px;
+}
+
+.nav-first {
+  display: flex;
+  align-items: center;
+  gap: 45px;
+  padding-bottom: 0px;
+}
+
+.logo img {
+  height: 22px;
+}
+
+.avatar img {
+  height: 50px;
+  width: 50px;
+}
+
+/* Main */
+.main {
+  overflow: hidden;
+  display: flex;
+  gap: 10px;
+  min-height: 570px;
+  align-items: center;
+  padding: 0 50px;
+}
+
+/* Image gallery */
+.gallery {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* Small gap between the main image and thumb list */
+}
+
+.gallery .main-img img {
+  display: none;
+}
+
+.gallery .main-img img.active {
+  display: inline-block;
+  width: 445px;
+  height: 255px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.gallery .thumb-list {
+  display: flex;
+  overflow-x: auto; /* Allows horizontal scrolling */
+  width: 445px;
+  height: 100px; /* Reduced height for thumbnails */
+  gap: 5px; /* Adds space between thumbnails */
+}
+
+.gallery .thumb-list::-webkit-scrollbar {
+  height: 8px; /* Height of scrollbar */
+}
+
+.gallery .thumb-list::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5); /* Custom scrollbar color */
+  border-radius: 10px;
+}
+
+.gallery .thumb-list div {
+  width: 120px;
+  height: 80px;
+  flex-shrink: 0; /* Ensures that thumbnails don't shrink when scrolling */
+  margin: 0;
+}
+
+.gallery .thumb-list img {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.gallery .thumb-list img:hover {
+  opacity: 0.5;
+}
+
+.gallery .thumb-list .active img {
+  opacity: 0.3;
+}
+
+.gallery .thumb-list .active {
+  border: 2px solid var(--orange);
+  margin: 0;
+}
+
+
+
+
+.icon-prev {
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.icon-next {
+  top: 50%;
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+.icon-close svg path {
+  fill: var(--white);
+}
+
+.icon-close svg path:hover {
+  cursor: pointer;
+  fill: var(--orange);
+}
+
+.icon-close {
+  position: absolute;
+  right: 0;
+  top: -40px;
+}
+
+/* Content */
+
+.content {
+  flex: 1;
+}
+.content h3 {
+  font-size: 16px;
+  color: var(--orange);
+}
+
+.content h2 {
+  font-size: 37px;
+  margin: 20px 0 40px 0;
+}
+
+.content p {
+  font-size: 16px;
+  color: var(--dark-grayish-blue);
+  margin-bottom: 30px;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.current-price {
+  font-weight: 700;
+  font-size: 25px;
+}
+
+.discount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 6px;
+  border-radius: 10%;
+  height: 25px;
+  background-color: var(--pale-orange);
+  font-weight: 700;
+  color: var(--orange);
+}
+
+.prev-price {
+  margin: 10px 0 35px 0;
+  font-size: 18px;
+  color: var(--grayish-blue);
+  font-weight: 700;
+  text-decoration: line-through;
+}
+
+.buy-the-car-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.buy-the-car {
+  color: var(--white);
+  background-color: var(--orange);
+  border: 0px;
+  height: 55px;
+  width: 80%;
+  border-radius: 10px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 0px;
+}
+.love-the-car {
+  color: var(--white);
+  background-color: transparent;
+  border: 1px solid black;
+  height: 53px;
+  width: 53px;
+  border-radius: 10px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 0px;
+}
+.buy-the-car:hover{
+  background-color: rgb(0, 18, 28)
+}
+
+/* Cart */
+.cart {
+  position: relative;
+  margin: 0 10px 0 10px;
+}
+
+.cart-icon {
+  font-size: 30px;
+  cursor: pointer;
+  color: rgba(233, 6, 6, 0.758);
+}
+.cart-count {
+  cursor: pointer;
+  position: absolute;
+  top: 5px;
+  right: -10px;
+  background-color: var(--orange);
+  color: var(--white);
+  min-width: 25px;
+  min-height: 17px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.delete-item {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* Mobile */
+
+@media (max-width: 755px) {
+  .navbar {
+    margin-bottom: 0;
+    border-bottom: none;
+  }
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .main, .gallery, .nav-links {
+    overflow: hidden;
+  }
+  .nav-first,
+  .nav-first {
+    gap: 30px;
+    padding-bottom: 10px;
+  }
+
+  .nav-first .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    left: 0px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: -5px;
+    max-width: 150px;
+    width: 100%;
+    height: 100vh;
+    background: var(--white);
+    align-items: start;
+    z-index: 15;
+    padding: 25px 25px;
+  }
+
+  .nav-first .backdrop.active {
+    background: var(--black-with-opacity);
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -5px;
+    z-index: 11;
+  }
+
+  .nav-links.active .close-icon {
+    display: inline-block;
+    margin-bottom: 30px;
+    right: 10px;
+    cursor: pointer;
+  }
+
+  .nav-links a {
+    font-weight: 700;
+    color: black;
+  }
+
+  .nav-links.active a:hover::after {
+    bottom: -5px;
+  }
+
+  /* main */
+
+  .main {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0;
+  }
+
+  /* display */
+  .gallery .main-img img.active {
+    display: inline-block;
+    width: 345px;
+    height: 205px;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+  
+  .gallery .thumb-list {
+    display: flex;
+    overflow-x: auto; /* Allows horizontal scrolling */
+    width: 345px;
+    height: 100px; /* Reduced height for thumbnails */
+    gap: 5px; /* Adds space between thumbnails */
+  }
+
+
+
+  .content {
+    padding: 0 20px;
+  }
+
+  .content h2 {
+    margin: 10px 0;
+    font-size: 30px;
+  }
+
+  .price-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  .prev-price {
+    margin: 0;
+  }
+
+  .buy-the-car-container {
+    flex-direction: row;
+  }
+
+  .counter {
+    width: 100%;
+  }
+
+  .counter button {
+    width: 40%;
+  }
+
+  .cart-container {
+    z-index: 20;
+    right: -85px;
+    top: 40px;
+  }
+}
+.heart {
+  font-size: 25px;
+  color: rgb(86, 86, 86);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.heart.red {
+  color: red;
+}
