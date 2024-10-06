@@ -18,15 +18,16 @@ html, body {
 }
 
 :root {
-  --orange: hsl(208, 100%, 13%);
-  --pale-orange: hsl(204, 93%, 39%);
-  --very-dark-blue: hsl(220, 13%, 13%);
-  --dark-grayish-blue: hsl(219, 9%, 45%);
-  --grayish-blue: hsl(220, 14%, 75%);
-  --light-grayish-blue: hsl(223, 64%, 98%);
-  --white: hsl(0, 0%, 100%);
-  --black: hsl(0, 0%, 0%);
-  --black-with-opacity: hsla(0, 0%, 0%, 0.75);
+  --orange: #002342;
+  --pale-orange: #0776c0;
+  --very-dark-blue: #1d2025;
+  --dark-grayish-blue: #68707d;
+  --grayish-blue: #b6bcc8;
+  --light-grayish-blue: #f7f8fd;
+  --white: #ffffff;
+  --black: #000000;
+  --white-o: #d1d1d1;
+  --black-with-opacity: #000000bf;
 }
 
 html {
@@ -47,7 +48,7 @@ body {
 .container {
   max-width: 1120px;
   min-height: 100vh;
-  padding: 0 10px;
+  padding: 0 0px;
   margin: auto;
 }
 
@@ -302,7 +303,7 @@ body {
 .love-the-car {
   color: var(--white);
   background-color: transparent;
-  border: 1px solid black;
+  border: 1px solid var(--black);
   height: 53px;
   width: 53px;
   border-radius: 10px;
@@ -351,6 +352,134 @@ body {
   cursor: pointer;
 }
 
+
+/* footer */
+
+footer {
+  overflow: hidden;
+  background-color: var(--black);
+  font-family: "Lato", sans-serif;
+  padding: 85px 0 285px 0;
+}
+
+.footer-inner {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 120px;
+  max-width: 1170px;
+  position: relative;
+}
+
+.footer-item {
+  float: left;
+  margin: 0 10% 0 0;
+}
+
+.footer-item:nth-of-type(4) {
+  display: none;
+}
+
+.footer-item:nth-of-type(7) {
+  float: right;
+  margin-right: 0;
+}
+
+footer h1 {
+  font-weight: 900;
+  color: var(--white);
+  font-size: 24px;
+  letter-spacing: 2px;
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+footer h2 {
+  font-weight: 300;
+  line-height: 1.8;
+  font-size: 13px;
+  color: var(--white-o);
+  letter-spacing: 0.03em;
+  padding: 15px 0 0 0;
+}
+
+footer .color {
+  color: var(--white);
+  font-weight: 400;
+}
+
+footer h3 {
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--white);
+  margin: 0;
+  padding-bottom: 9px;
+  letter-spacing: 0.03em;
+}
+
+footer h3.desktop {
+  padding-top: 30px;
+}
+
+footer ul {
+  line-height: 1.8;
+  list-style-type: none;
+  padding: 0;
+}
+
+footer li {
+  font-weight: 300;
+  font-size: 13px;
+  color: var(--white-o);
+  letter-spacing: 0.03em;
+}
+
+footer p {
+  font-weight: 300;
+  font-size: 13px;
+  padding: 0;
+  line-height: 1.8;
+  letter-spacing: 0.03em;
+}
+
+footer a {
+  text-decoration: none;
+  color: var(--white-o);
+}
+
+footer a:hover {
+  color: var(--white);
+}
+
+footer .desktop {
+  display: auto;
+}
+
+.footer-inner:after {
+  content: "@2024_Project_Penta";
+  font-weight: 300;
+  letter-spacing: 0.03em;
+  font-size: 10px;
+  color: var(--white-o);
+  position: absolute;
+  top: 260px;
+  clear: both;
+  display: block;
+}
+
+footer .contact-container {
+  display: flex;
+  width: 20;
+  height: 10;
+
+}
+
+footer .logo {
+  width: 7rem;
+  padding: 1rem;
+  margin: 20;
+}
+
 /* Mobile */
 
 @media (max-width: 755px) {
@@ -358,15 +487,8 @@ body {
     margin-bottom: 0;
     border-bottom: none;
   }
-  html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
+  .main, .gallery {
     overflow-x: hidden;
-  }
-  
-  .main, .gallery, .nav-links {
-    overflow: hidden;
   }
   .nav-first,
   .nav-first {
@@ -391,7 +513,7 @@ body {
     flex-direction: column;
     position: absolute;
     top: 0;
-    right: -5px;
+    right: 0px;
     max-width: 150px;
     width: 100%;
     height: 100vh;
@@ -421,7 +543,7 @@ body {
 
   .nav-links a {
     font-weight: 700;
-    color: black;
+    color: var(--black);
   }
 
   .nav-links.active a:hover::after {
@@ -439,8 +561,9 @@ body {
   /* display */
   .gallery .main-img img.active {
     display: inline-block;
-    width: 345px;
-    height: 205px;
+    aspect-ratio: 16/9;
+    width: 100vw;
+    height: auto;
     border-radius: 2px;
     cursor: pointer;
   }
@@ -448,7 +571,7 @@ body {
   .gallery .thumb-list {
     display: flex;
     overflow-x: auto; /* Allows horizontal scrolling */
-    width: 345px;
+    width: 100vw;
     height: 100px; /* Reduced height for thumbnails */
     gap: 5px; /* Adds space between thumbnails */
   }
@@ -492,6 +615,56 @@ body {
     z-index: 20;
     right: -85px;
     top: 40px;
+  }
+  footer {
+    padding: 50px 0 70px 0 !important;
+    overflow: hidden;
+  }
+
+  .footer-inner {
+    box-sizing: border-box;
+    border-bottom: 1px solid #333;
+    padding-bottom: 490px;
+    margin-bottom: 50px;
+  }
+
+  .footer-item {
+    margin: 0 0 42px 0;
+    width: 50%;
+  }
+
+  .footer-item:nth-of-type(1) {
+    border-bottom: 1px solid #333;
+    padding-bottom: 32px;
+    float: none;
+    width: 100%;
+  }
+
+  .footer-item:nth-of-type(2) {
+    clear: both;
+  }
+
+  .footer-item:nth-of-type(4) {
+    clear: both;
+    display: block;
+  }
+
+  .footer-item:nth-of-type(6) {
+    clear: both;
+  }
+
+  .footer-item:nth-of-type(7) {
+    clear: both;
+    float: left;
+    margin: 20px 0 0 -13px;
+  }
+
+  footer .desktop {
+    display: none;
+  }
+
+  .footer-inner:after {
+    top: 730px;
   }
 }
 .heart {
